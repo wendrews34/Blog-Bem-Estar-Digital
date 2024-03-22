@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venda seu carro</title>
+    <link rel="stylesheet" href="css/forms.css" />
+  </head>
+  <body>
+        <header>
+            <nav class="navbar">
+
+              <!-- LOGO -->
+              <div class="logo"><img src="img/logo2.jpg" alt="logo"></div>
+
+              <!-- LINKS -->
+              <div>
+              <!-- NAVEGAÇÃO MENU -->
+                  <ul class="nav-links">
+                  <!-- CHECKBOX -->
+                      <input type="checkbox" id="checkbox_toggle" />
+                      <label for="checkbox_toggle" class="checkbox-menu">&#9776; </label>
+                      <!-- NAVEGAÇÃO MENUS -->
+                      <div class="menu">
+                          <li><a href="index.html">Início</a></li>
+                          <li><a href="sobre.html">Sobre</a></li>
+                          <li><a href="article.html">Artigos</a></li>
+                          <li><a href="forms.html">Assine agora</a></li>
+                      </div>
+                  </ul>
+              </div>
+          </nav>
+        </header>
+       <div class="container">
+        <h2>Formulário de Assinantes</h2>
+        <form id="subscribe-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+          </div>
+          <div class="form-group">
+            <label for="idade">Idade:</label>
+            <input type="idade" id="idade" name="idade" placeholder="Qual a sua Idade" required>
+          </div>
+          <div class="input-container international" data-verifica="">
+            <label class="input-label" for="place">Você está no Brasil?</label>
+            <div class="international-radio">
+              <input id="brasil" class="place" type="radio" name="place" checked="" value="B" required="required">
+              <label class="input-radio" for="brasil">Sim</label>
+            </div>
+
+            <div class="international-radio">
+              <input id="fora" class="place" type="radio" name="place" value="F" required="required" data-gtm-form-interact-field-id="0">
+              <label class="input-radio" for="fora">Não</label>
+            </div>	
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefone:</label>
+            <input type="phone" id="phone" name="phone" placeholder="Digite seu telefone" required>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Assinar">
+          </div>
+        </form>
+      </div>
+      <footer class="rodape">
+        <div class="rodape-div">
+    
+            <div class="rodape-div-1">
+                <div class="rodape-div-1-coluna">
+                    <!-- elemento -->
+
+                    <span><img src="img/logo2.jpg" alt="logo"></span>
+                    <p>Endereço: 2344, Av. Mário Andreazza, 2260 - São Francisco, Itacoatiara - AM, 69100-000</p>
+                </div>
+            </div>
+    
+            <div class="rodape-div-2">
+                <div class="rodape-div-2-coluna">
+                    <!-- elemento -->
+                    <span><b>Contatos</b></span>
+                    <p>wendrews@gmail.com</p>
+                    <p>+55 92 99275-6382</p>
+                    <p>renan@gmail.com</p>
+                    <p>+55 92 99223-5342</p>
+                </div>
+            </div>
+    
+            <div class="rodape-div-3">
+                <div class="rodape-div-3-coluna">
+                    <!-- elemento -->
+                    <span><b>Links</b></span>
+                    <p><a href="article.html">Artigos</a></p>
+                    <p><a href="forms.html">Assine já</a></p>
+                    <p><a href="sobre.html">Sobre</a></p>
+                </div>
+            </div>
+    
+            <div class="rodape-div-4">
+                <div class="rodape-div-4-coluna">
+                    <!-- elemento -->
+                    <span><b>Outros</b></span>
+                    <p>Políticas de Privacidade</p>
+                </div>
+            </div>
+    
+        </div>
+        <p class="rodape-direitos">Copyright © 2024 – Todos os Direitos Reservados.</p>
+    </footer>
+  </body>
+</html>

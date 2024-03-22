@@ -1,0 +1,464 @@
+
+/* Resetando margens e preenchimentos padrão para todos os elementos */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Georgia; /* Definindo a fonte padrão para todos os elementos */
+}
+
+/* Estilização do corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Definindo uma fonte alternativa para o corpo */
+    line-height: 1.6; /* Definindo a altura da linha para melhor legibilidade */
+    background-color: #333; /* Cor de fundo do corpo */
+    color: #000; /* Cor do texto */
+}
+
+/* Estilização de links */
+a {
+    text-decoration: none; /* Removendo sublinhado padrão de links */
+}
+
+/* Removendo marcadores de lista padrão */
+li {
+    list-style: none;
+}
+
+/* Estilização da barra de navegação */
+.navbar {
+    display: flex; /* Fazendo com que os elementos da barra de navegação se comportem como uma linha flexível */
+    align-items: center; /* Alinhando os itens verticalmente */
+    justify-content: space-between; /* Distribuindo os itens uniformemente ao longo do eixo principal */
+    padding: 20px; /* Adicionando preenchimento interno */
+    background-color: teal; /* Cor de fundo da barra de navegação */
+    color: #fff; /* Cor do texto */
+}
+
+/* Estilização dos links na barra de navegação */
+.nav-links a {
+    color: #fff; /* Cor do texto dos links */
+}
+
+/* Estilização do logo */
+.logo img {
+    width: 40%; /* Largura do logotipo */
+    margin-bottom: .5rem; /* Margem inferior */
+    border-radius: 70px; /* Bordas arredondadas */
+}
+
+/* Estilização do menu de navegação */
+.menu {
+    display: flex; /* Fazendo com que os itens do menu se comportem como uma linha flexível */
+    gap: 1em; /* Espaço entre os itens */
+    font-size: 18px; /* Tamanho da fonte */
+}
+
+/* Efeito de hover nos itens do menu */
+.menu li:hover {
+    background-color: #4c9e9e; /* Cor de fundo ao passar o mouse */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: 0.3s ease; /* Transição suave */
+}
+
+/* Estilização dos itens do menu */
+.menu li {
+    padding: 5px 14px; /* Preenchimento interno */
+}
+
+/* Escondendo checkbox para uso posterior em menu responsivo */
+input[type=checkbox] {
+    display: none;
+}
+
+/* Estilização do ícone de menu */
+.checkbox-menu {
+    display: none; /* Escondendo por padrão */
+    font-size: 24px; /* Tamanho da fonte */
+    user-select: none; /* Impedindo a seleção do texto */
+}
+
+
+/* Estilos para telas com largura máxima de 768px (dispositivos móveis) */
+@media (max-width: 768px) {
+    /* Ajustando largura da barra de navegação */
+    .navbar {
+        width: 90%; /* Definindo a largura para 90% da largura do viewport */
+    }
+
+    /* Ajustando tamanho do logotipo */
+    .logo img {
+        width: 20%; /* Reduzindo o tamanho do logotipo para 20% da largura do seu contêiner */
+        margin-bottom: .5rem; /* Adicionando uma margem inferior */
+    }
+
+    /* Ajustando o menu de navegação */
+    .menu {
+        width: 100%; /* Definindo a largura para 100% da largura do viewport */
+        display: none; /* Escondendo o menu por padrão */
+        position: absolute; /* Posicionamento absoluto em relação ao viewport */
+        background-color: teal; /* Cor de fundo do menu */
+        right: 0; /* Alinhando o menu à direita */
+        left: 0; /* Alinhando o menu à esquerda */
+        text-align: center; /* Centralizando o texto */
+        padding: 10px 0; /* Adicionando preenchimento interno */
+    }
+
+    /* Ajustando o efeito de hover nos itens do menu */
+    .menu li:hover {
+        display: inline-block; /* Tornando os itens visíveis ao passar o mouse */
+        background-color: #4c9e9e; /* Cor de fundo ao passar o mouse */
+        transition: 0.3s ease; /* Transição suave */
+    }
+
+    /* Adicionando margem superior para os itens do menu */
+    .menu li + li {
+        margin-top: 12px; /* Adicionando margem superior para separar os itens */
+    }
+
+    /* Mostrando o menu ao clicar no ícone do menu */
+    input[type=checkbox]:checked ~ .menu {
+        display: block; /* Exibindo o menu quando o checkbox está marcado */
+    }
+
+    /* Mostrando o ícone do menu */
+    .checkbox-menu {
+        display: block; /* Exibindo o ícone do menu */
+    }
+}
+
+/* Estilos para o contêiner principal */
+.container{
+    display: flex; /* Fazendo com que os itens dentro do contêiner se comportem como uma linha flexível */
+    padding: 2rem 2.5rem; /* Adicionando preenchimento interno */
+    gap: 3rem; /* Espaçamento entre os itens */
+    max-width: 1200px; /* Largura máxima do contêiner */
+    margin: 0 auto; /* Centralizando horizontalmente */
+}
+
+/* Estilos para o contêiner de posts */
+#posts-container{
+    flex: 3 1 2; /* Definindo a proporção do espaço ocupado pelo contêiner de posts */
+}
+
+/* Estilos para cada post */
+.post{
+    margin-bottom: 2.5rem; /* Adicionando margem inferior */
+    background-color: #f9f9f9; /* Cor de fundo do post */
+    padding: 20px; /* Adicionando preenchimento interno */
+    border: 1px solid #ddd; /* Adicionando uma borda */
+}
+
+/* Estilos para os títulos dos posts */
+h2{
+    margin-bottom: 2.5rem; /* Adicionando margem inferior */
+    color: #f9f9f9; /* Cor do texto */
+    padding: 20px; /* Adicionando preenchimento interno */
+    border: 1px solid #ddd; /* Adicionando uma borda */
+}
+
+/* Estilos para as imagens dentro dos posts */
+.post img{
+    width: 100%; /* Definindo a largura da imagem como 100% */
+    margin-bottom: 1rem; /* Adicionando margem inferior */
+}
+
+/* Estilos para os parágrafos dentro dos posts */
+.post p{
+    text-align: justify; /* Justificando o texto */
+}
+
+/* Estilos para os títulos, descrições e autores dos posts */
+.title,
+.description,
+.author{
+    margin-bottom: 1rem; /* Adicionando margem inferior */
+    text-align: justify; /* Justificando o texto */
+}
+
+/* Estilos para os títulos dos posts */
+.title{
+    font-size: 1.6rem; /* Definindo o tamanho da fonte */
+}
+
+/* Estilos para os autores dos posts */
+.author{
+    color: #333; /* Cor do texto */
+    font-weight: bold; /* Definindo o peso da fonte como negrito */
+}
+
+/* Estilos para a barra lateral */
+#sidebar{
+    flex: 1 1 0; /* Distribuição de espaço flexível */
+}
+
+/* Estilos para as seções dentro da barra lateral */
+#search-bar,
+#categories,
+#tags,
+#coment,
+#coments{
+    padding: 1.5rem; /* Adicionando preenchimento interno */
+    border: 1px solid #ddd; /* Adicionando uma borda */
+    margin-bottom: 1rem; /* Adicionando margem inferior */
+    background-color: #f9f9f9; /* Cor de fundo */
+}
+
+/* Estilos para os títulos das seções */
+#search-bar h4,
+#categories h4,
+#tags h4,
+#coment h4,
+#coments h4 {
+    margin-bottom: 1.5rem; /* Adicionando margem inferior */
+    font-size: 1.6rem; /* Definindo o tamanho da fonte */
+}
+
+/* Estilos para o formulário de busca */
+#search-bar form{
+    display: flex; /* Fazendo com que os elementos se comportem como uma linha flexível */
+}
+
+/* Estilos para os campos de entrada */
+#search-bar input{
+    padding: 0.5rem 2.5rem; /* Adicionando preenchimento interno */
+    border: 1px solid #ddd; /* Adicionando uma borda */
+}
+
+/* Estilos para o botão de envio */
+#search-bar input[type="submit"] {
+    cursor: pointer; /* Mudando o cursor ao passar por cima do botão */
+    background-color: #4c9e9e; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto */
+    border: none; /* Removendo a borda */
+}
+
+/* Estilos para os links nas categorias */
+#categories a{
+    color: #000; /* Cor do texto */
+}
+
+/* Estilos para os itens da lista de categorias */
+#categories li{
+    margin-bottom: .5rem; /* Adicionando margem inferior */
+}
+
+/* Estilos para o contêiner de tags */
+#tags-container{
+    display:  flex; /* Fazendo com que os elementos se comportem como uma linha flexível */
+    flex-wrap: wrap; /* Permitindo que os elementos quebrem para a próxima linha */
+    gap: 0.5rem; /* Espaçamento entre os elementos */
+}
+
+/* Estilos para as tags */
+#tags-container a{
+    background-color: #4c9e9e; /* Cor de fundo das tags */
+    color: #fff; /* Cor do texto */
+    padding: 5px 10px; /* Adicionando preenchimento */
+    border-radius: 3px; /* Adicionando bordas arredondadas */
+    text-decoration: none; /* Removendo sublinhado */
+}
+
+/* Estilos para os campos de texto e textarea nos comentários */
+#coment input[type="text"],
+#coment textarea {
+    width: calc(95% - 20px); /* Ajustando a largura */
+    padding: 0.5rem; /* Adicionando preenchimento */
+    margin-bottom: 0.5rem; /* Adicionando margem inferior */
+    border: 1px solid #ccc; /* Adicionando uma borda */
+}
+
+/* Estilos para o botão de envio nos comentários */
+#coment form button {
+    width: calc(100% - 20px); /* Ajustando a largura */
+    background-color: #4c9e9e; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    border: none; /* Removendo a borda */
+    padding: 10px; /* Adicionando preenchimento */
+    margin-top: 5px; /* Adicionando margem superior */
+    cursor: pointer; /* Mudando o cursor */
+}
+
+/* Estilos para o efeito de hover no botão de envio */
+#coment form button:hover {
+    background-color: #3f8585; /* Alterando a cor de fundo ao passar o mouse */
+}
+
+/* Estilos para os comentários */
+.comentarios {
+    margin-top: 20px; /* Adicionando margem superior */
+}
+
+/* Estilos para cada comentário */
+.comentario {
+    background-color: #4c9e9e; /* Cor de fundo */
+    padding: .5rem; /* Adicionando preenchimento */
+    margin-bottom: 1.6rem; /* Adicionando margem inferior */
+}
+
+/* Estilos para os nomes dos autores dos comentários */
+.comentario h5 {
+    color: #090909; /* Cor do texto */
+    margin-bottom: 0.5rem; /* Adicionando margem inferior */
+    font-size: .6rem; /* Definindo o tamanho da fonte */
+}
+
+/* Estilos para o conteúdo dos comentários */
+.comentario p {
+    padding: .5rem; /* Adicionando preenchimento */
+    color: #272525; /* Cor do texto */
+    font-size: .6rem; /* Definindo o tamanho da fonte */
+    text-align: justify; /* Justificando o texto */
+}
+
+
+/* Estilos aplicados quando a largura da tela é no máximo 768px (dispositivos móveis) */
+@media (max-width: 768px) {
+    /* Redimensionando o tamanho do texto do logotipo */
+    .logo{
+        font-size: 20px;
+    }
+
+    /* Redimensionando o tamanho do texto dos títulos dos posts */
+    #posts-container h2{
+        font-size: 16px;
+    }
+    
+    /* Ajustando a disposição dos elementos das seções para quebrar em várias linhas e justificar o texto */
+    section {
+        flex-wrap: wrap;
+        text-align: justify;
+    }
+
+    /* Redimensionando o tamanho do texto dos títulos dos posts */
+    .title{
+        font-size: 16px;
+    }
+
+    /* Redimensionando o tamanho do texto das descrições, autores e links */
+    .description,
+    .author,
+    a{
+        font-size: 11px;
+    }
+
+    /* Ajustando a largura e a margem inferior dos elementos da barra lateral */
+    aside {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Redimensionando o tamanho do texto dos títulos das seções */
+    #search-bar h4,
+    #categories h4,
+    #tags h4,
+    #coment h4,
+    #coments h4{
+        font-size: 16px;
+    }
+
+    /* Ajustando o preenchimento e a borda do campo de entrada de busca */
+    #search-bar input{
+        padding: 0.2rem .2rem;
+        border: 1px solid #ddd;
+    }
+
+    /* Ajustando a margem inferior dos itens da lista de categorias */
+    #categories li{
+        margin-bottom: .2rem;
+    }
+
+    /* Ajustando a largura do textarea */
+    textarea {
+        width: calc(100% - 20px); /* Definindo a largura menos a margem direita */
+        margin-right: auto; /* Alinhando o textarea à margem direita */
+    }
+}
+
+
+/* Estilos para o rodapé */
+.rodape{
+    background-color: #4c9e9e; /* Cor de fundo */
+    color:#000; /* Cor do texto */
+    height: auto; /* Altura automática */
+    width: 103%; /* Largura estendida para além da largura do viewport */
+    font-size: 14px; /* Tamanho da fonte */
+    font-family: helvetica; /* Tipo de fonte */
+}
+
+/* Estilos para os links dentro do rodapé */
+.rodape a{
+    text-decoration: none; /* Removendo sublinhado dos links */
+    color:#000; /* Cor do texto */
+}
+
+/* Estilos para os parágrafos dentro do rodapé */
+.rodape p{
+    margin-bottom: 5px; /* Adicionando margem inferior */
+}
+
+/* Estilos para o contêiner dentro do rodapé */
+.rodape-div{
+    display: flex; /* Fazendo com que os elementos se comportem como uma linha flexível */
+    flex-wrap: wrap; /* Permitindo que os elementos quebrem para a próxima linha */
+    width:100%; /* Largura total */
+    margin: auto; /* Centralizando horizontalmente */
+    align-items: stretch; /* Esticando os elementos verticalmente */
+}
+
+/* Estilos para as colunas dentro do contêiner do rodapé */
+.rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4{
+    display: flex; /* Fazendo com que os elementos se comportem como uma linha flexível */
+    width: calc(100% / 4 - 20px); /* Calculando a largura das colunas */
+    padding: 10px; /* Adicionando preenchimento interno */
+}
+
+/* Estilos para os elementos de texto com a tag <span> dentro do rodapé */
+.rodape span{
+    font-size: 20px; /* Tamanho da fonte */
+    color:#000; /* Cor do texto */
+}
+
+/* Estilos para o texto de direitos autorais no rodapé */
+.rodape-direitos{
+    width: 100%; /* Largura total */
+    background-color:#89cca3; /* Cor de fundo */
+    padding: 10px; /* Adicionando preenchimento interno */
+    text-align: center; /* Centralizando o texto */
+}
+
+/* Estilos para as imagens dentro de elementos <span> no rodapé */
+span img{
+    width: 15%; /* Definindo a largura da imagem */
+    border-radius: 50%; /* Adicionando bordas arredondadas */
+}
+
+/* Estilos aplicados quando a largura da tela é no máximo 768px (dispositivos móveis) */
+@media (max-width: 768px) {
+    /* Redimensionando a largura e o preenchimento das colunas no rodapé */
+    .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4{
+        width: calc(50% - 20px); /* Definindo a largura das colunas */
+        padding: 10px; /* Adicionando preenchimento interno */
+    }
+
+    /* Ajustando o preenchimento do contêiner no rodapé */
+    .rodape-div{
+        padding: 60px 0px 40px 0px; /* Adicionando preenchimento superior e inferior */
+    }
+
+    /* Redimensionando a largura e o tamanho do texto das imagens e negritos dentro do rodapé */
+    span img,
+    span b{
+        width: 30%; /* Definindo a largura */
+        font-size: 14px; /* Definindo o tamanho da fonte */
+    }
+
+    /* Redimensionando o tamanho do texto dos parágrafos */
+    p{
+        font-size: 12px; /* Definindo o tamanho da fonte */
+    }
+
+    /* Ajustando a altura do rodapé */
+    .rodape{
+        height: auto; /* Altura automática */
+    }
+}
